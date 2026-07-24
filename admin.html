@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Admin - Project Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #334155;
+            --border: #e2e8f0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            text-align: center;
+            color: #64748b;
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 0.9rem;
+        }
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+        .help-text {
+            font-size: 0.8rem;
+            color: #64748b;
+            margin-top: 4px;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .section-title {
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--border);
+            color: #0f172a;
+        }
+        button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 30px;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #0284c7;
+        }
+        .success-msg {
+            display: none;
+            background-color: #d1fae5;
+            color: #065f46;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            margin-top: 20px;
+            font-weight: 600;
+        }
+        #generatedCode {
+            display: none;
+            width: 100%;
+            height: 200px;
+            margin-top: 20px;
+            background: #1e293b;
+            color: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Project Generator (Admin)</h1>
+    <p class="subtitle">Fill this form to generate the code for a new project card.</p>
+
+    <form id="projectForm">
+        
+        <div class="section-title">1. Basic Details</div>
+        
+        <div class="grid-2">
+            <div class="form-group">
+                <label>Project ID *</label>
+                <input type="text" id="p_id" required placeholder="e.g., sales-dashboard-2024">
+                <div class="help-text">Unique name, no spaces (use hyphens).</div>
+            </div>
+            <div class="form-group">
+                <label>Project Title *</label>
+                <input type="text" id="p_title" required placeholder="e.g., Global Sales Analysis">
+            </div>
+        </div>
+
+        <div class="grid-2">
+            <div class="form-group">
+                <label>Category *</label>
+                <select id="p_category">
+                    <option value="Power BI">Power BI</option>
+                    <option value="Excel Dashboard">Excel Dashboard</option>
+                    <option value="SQL Analysis">SQL Analysis</option>
+                    <option value="Python Data Analysis">Python Data Analysis</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Thumbnail Image Path</label>
+                <input type="text" id="p_thumbnail" placeholder="e.g., images/sales-thumb.png">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Short Description (For Card)</label>
+            <input type="text" id="p_shortdesc" placeholder="One sentence summary of the project.">
+        </div>
+
+        <div class="form-group">
+            <label>Tools Used</label>
+            <input type="text" id="p_tools" placeholder="e.g., Power BI, Excel, SQL">
+            <div class="help-text">Separate multiple tools with a comma (,).</div>
+        </div>
+
+        <div class="section-title">2. Modal Details (Deep Dive)</div>
+
+        <div class="form-group">
+            <label>Project Overview</label>
+            <textarea id="p_overview"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Business Problem</label>
+            <textarea id="p_problem"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Dataset Description</label>
+            <textarea id="p_dataset"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label>Data Cleaning Process</label>
+            <textarea id="p_cleaning"></textarea>
+        </div>
+
+        <div class="section-title">3. Insights & Code</div>
+
+        <div class="form-group">
+            <label>DAX Measures (Optional)</label>
+            <textarea id="p_dax" placeholder="Total Sales = SUM(Sales[Amount])"></textarea>
+            <div class="help-text">Put each DAX measure on a new line. Leave empty if not applicable.</div>
+        </div>
+
+        <div class="form-group">
+            <label>Key Insights *</label>
+            <textarea id="p_insights" required placeholder="Sales increased by 20% in Q3."></textarea>
+            <div class="help-text">Put each insight on a new line.</div>
+        </div>
+
+        <div class="form-group">
+            <label>Recommendations *</label>
+            <textarea id="p_recommendations" required placeholder="Focus marketing on the East region."></textarea>
+            <div class="help-text">Put each recommendation on a new line.</div>
+        </div>
+
+        <div class="section-title">4. Media & Links</div>
+
+        <div class="form-group">
+            <label>Gallery Images</label>
+            <textarea id="p_gallery" placeholder="images/dashboard1.png&#10;images/dashboard2.png"></textarea>
+            <div class="help-text">Put each image path on a new line.</div>
+        </div>
+
+        <div class="grid-2">
+            <div class="form-group">
+                <label>GitHub Link (Optional)</label>
+                <input type="text" id="p_github" placeholder="https://github.com/...">
+            </div>
+            <div class="form-group">
+                <label>Live Demo Link (Optional)</label>
+                <input type="text" id="p_demo" placeholder="https://...">
+            </div>
+            <div class="form-group">
+                <label>Download File Path (Optional)</label>
+                <input type="text" id="p_download" placeholder="files/project.pbix">
+            </div>
+        </div>
+
+        <button type="submit">Generate & Copy Code</button>
+    </form>
+
+    <div id="successMsg" class="success-msg">
+        🎉 Code Copied! Ab projects.js file open karein aur purane project ke baad ise PASTE kar dein.
+    </div>
+    
+    <textarea id="generatedCode" readonly></textarea>
+
+</div>
+
+<script>
+    document.getElementById('projectForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Helper function to split text area into array by lines
+        const splitLines = (str) => str.split('\n').map(s => s.trim()).filter(s => s !== '');
+        
+        // Helper function to split by comma
+        const splitComma = (str) => str.split(',').map(s => s.trim()).filter(s => s !== '');
+
+        // Gather Data
+        const data = {
+            id: document.getElementById('p_id').value,
+            title: document.getElementById('p_title').value,
+            category: document.getElementById('p_category').value,
+            thumbnail: document.getElementById('p_thumbnail').value,
+            shortDescription: document.getElementById('p_shortdesc').value,
+            tools: splitComma(document.getElementById('p_tools').value),
+            
+            overview: document.getElementById('p_overview').value,
+            businessProblem: document.getElementById('p_problem').value,
+            datasetDesc: document.getElementById('p_dataset').value,
+            dataCleaning: document.getElementById('p_cleaning').value,
+            
+            daxMeasures: splitLines(document.getElementById('p_dax').value),
+            insights: splitLines(document.getElementById('p_insights').value),
+            recommendations: splitLines(document.getElementById('p_recommendations').value),
+            
+            links: {
+                github: document.getElementById('p_github').value,
+                liveDemo: document.getElementById('p_demo').value,
+                downloadFile: document.getElementById('p_download').value
+            },
+            
+            galleryImages: splitLines(document.getElementById('p_gallery').value)
+        };
+
+        // Convert to formatted string (like JSON, but for JS file insertion)
+        const codeString = "  ,\n  {\n" + 
+            `    id: "${data.id}",\n` +
+            `    title: "${data.title}",\n` +
+            `    category: "${data.category}",\n` +
+            `    thumbnail: "${data.thumbnail}",\n` +
+            `    shortDescription: "${data.shortDescription}",\n` +
+            `    tools: ${JSON.stringify(data.tools)},\n\n` +
+            `    overview: "${data.overview}",\n` +
+            `    businessProblem: "${data.businessProblem}",\n` +
+            `    datasetDesc: "${data.datasetDesc}",\n` +
+            `    dataCleaning: "${data.dataCleaning}",\n\n` +
+            `    daxMeasures: ${JSON.stringify(data.daxMeasures, null, 4).replace(/\]/g, '    ]')},\n` +
+            `    insights: ${JSON.stringify(data.insights, null, 4).replace(/\]/g, '    ]')},\n` +
+            `    recommendations: ${JSON.stringify(data.recommendations, null, 4).replace(/\]/g, '    ]')},\n\n` +
+            `    links: {\n` +
+            `      github: "${data.links.github}",\n` +
+            `      liveDemo: "${data.links.liveDemo}",\n` +
+            `      downloadFile: "${data.links.downloadFile}"\n` +
+            `    },\n\n` +
+            `    galleryImages: ${JSON.stringify(data.galleryImages, null, 4).replace(/\]/g, '    ]')}\n` +
+            "  }";
+
+        // Show Code
+        const codeArea = document.getElementById('generatedCode');
+        codeArea.value = codeString;
+        codeArea.style.display = 'block';
+
+        // Copy to clipboard
+        navigator.clipboard.writeText(codeString).then(() => {
+            const successMsg = document.getElementById('successMsg');
+            successMsg.style.display = 'block';
+            setTimeout(() => { successMsg.style.display = 'none'; }, 8000);
+        }).catch(err => {
+            alert('Failed to copy text. You can copy it manually from the black box below.');
+        });
+    });
+</script>
+
+</body>
+</html>

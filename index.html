@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuba Zainab | Data Analyst Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">Tuba<span>Zainab</span></a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <a href="#resume" class="btn btn-outline btn-resume-nav">Resume</a>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content fade-up">
+                <div class="status-badge">
+                    <span class="pulse"></span>
+                    Actively Looking for Data Analyst Opportunities
+                </div>
+                <h1>Hi, I'm <span class="highlight">Tuba Zainab</span></h1>
+                <h2>Data Analyst</h2>
+                <p>Transforming complex datasets into actionable business insights. Specialized in Excel, SQL, Python, and Power BI to drive data-informed decision-making.</p>
+                <div class="hero-buttons fade-up delay-300">
+                    <a href="#projects" class="btn btn-primary">View My Projects</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-visual scale-up delay-200">
+                <div class="hero-glow-1"></div>
+                <div class="hero-glow-2"></div>
+                <div class="data-graphic">
+                    <!-- Dashboard Header -->
+                    <div class="graphic-header">
+                        <div class="dots"><span></span><span></span><span></span></div>
+                        <div class="graphic-title">Analytics Overview</div>
+                    </div>
+                    
+                    <!-- Main Chart Area -->
+                    <div class="chart-area">
+                        <!-- Y-Axis Grid Lines -->
+                        <div class="grid-lines">
+                            <div></div><div></div><div></div><div></div><div></div>
+                        </div>
+                        
+                        <!-- Animated Bars -->
+                        <div class="bars-container">
+                            <div class="bar bar-1"><div class="bar-fill"></div></div>
+                            <div class="bar bar-2"><div class="bar-fill"></div></div>
+                            <div class="bar bar-3"><div class="bar-fill"></div></div>
+                            <div class="bar bar-4"><div class="bar-fill"></div></div>
+                        </div>
+                        
+                        <!-- Floating Stats -->
+                        <div class="floating-stat stat-1">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"></polyline><polyline points="16 7 22 7 22 13"></polyline></svg>
+                            +24%
+                        </div>
+                        <div class="floating-stat stat-2">
+                            <div class="circle-chart">
+                                <svg viewBox="0 0 36 36" class="circular-chart blue">
+                                  <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                  <path class="circle-fg" stroke-dasharray="75, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                </svg>
+                                <span>75%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Data Impact Stats Banner -->
+    <div class="stats-banner section" style="padding: 40px 0; border-bottom: 1px solid var(--border-color); background-color: var(--bg-light);">
+        <div class="container" style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 24px;">
+            <div class="stat-box fade-up delay-100" style="text-align: center;">
+                <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 4px; font-family: monospace;">4+</h3>
+                <p style="color: var(--secondary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Core Tools Mastered</p>
+            </div>
+            <div class="stat-box fade-up delay-200" style="text-align: center;">
+                <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 4px; font-family: monospace;">1M+</h3>
+                <p style="color: var(--secondary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Rows Analyzed</p>
+            </div>
+            <div class="stat-box fade-up delay-300" style="text-align: center;">
+                <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary-color); margin-bottom: 4px; font-family: monospace;">100%</h3>
+                <p style="color: var(--secondary-color); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Data Accuracy</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+        <div class="container about-grid">
+            <div class="about-text slide-right">
+                <h2 class="section-title" style="text-align: left;">About Me</h2>
+                <p>I am a passionate Data Analyst with a strong foundation in data manipulation, visualization, and statistical analysis. I enjoy solving complex business problems by uncovering hidden patterns in data.</p>
+                <p>My goal is to secure a Data Analyst position where I can leverage my skills in <strong>Power BI, SQL, Python, and Advanced Excel</strong> to deliver actionable insights that drive business growth.</p>
+                
+                <div class="about-highlights" style="display: flex; gap: 32px; margin-top: 48px; flex-wrap: wrap;">
+                    <div class="highlight-item" style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--primary-color);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                        </div>
+                        <h4 style="font-size: 1rem;">Data Visualization</h4>
+                    </div>
+                    <div class="highlight-item" style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--primary-color);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                        </div>
+                        <h4 style="font-size: 1rem;">Data Cleaning</h4>
+                    </div>
+                    <div class="highlight-item" style="text-align: center;">
+                        <div style="width: 60px; height: 60px; background: var(--bg-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; color: var(--primary-color);">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+                        </div>
+                        <h4 style="font-size: 1rem;">Statistical Analysis</h4>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-visual scale-up delay-200">
+                <div class="floating-tech-grid">
+                    <div class="tech-bubble tb-1">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#217346" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="16" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        Excel
+                    </div>
+                    <div class="tech-bubble tb-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00758f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"></ellipse><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path></svg>
+                        SQL
+                    </div>
+                    <div class="tech-bubble tb-3">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F2C94C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="8" y1="13" x2="16" y2="13"></line><line x1="8" y1="17" x2="16" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        Python
+                    </div>
+                    <div class="tech-bubble tb-4">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#F2C811" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                        Power BI
+                    </div>
+                    <div class="tech-bubble tb-5">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-color)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10z"></path></svg>
+                        Analytics
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills section bg-light">
+        <div class="container">
+            <h2 class="section-title fade-up">Technical Skills</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-category fade-up">
+                    <h3>Data Visualization & BI</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge"><i class="fas fa-chart-line"></i> Power BI</span>
+                        <span class="skill-badge"><i class="fas fa-table"></i> Power Query</span>
+                        <span class="skill-badge"><i class="fas fa-calculator"></i> DAX</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-up">
+                    <h3>Data Manipulation</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge"><i class="fas fa-file-excel"></i> Microsoft Excel</span>
+                        <span class="skill-badge"><i class="fas fa-file-excel"></i> Advanced Excel</span>
+                        <span class="skill-badge"><i class="fas fa-database"></i> SQL</span>
+                        <span class="skill-badge"><i class="fab fa-python"></i> Python</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-up">
+                    <h3>Core Competencies</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge"><i class="fas fa-broom"></i> Data Cleaning</span>
+                        <span class="skill-badge"><i class="fas fa-magnifying-glass"></i> Data Analysis</span>
+                        <span class="skill-badge"><i class="fas fa-chart-bar"></i> Data Visualization</span>
+                        <span class="skill-badge"><i class="fas fa-percentage"></i> Statistics & Probability</span>
+                    </div>
+                </div>
+
+                <div class="skill-category fade-up">
+                    <h3>Other Tools</h3>
+                    <div class="skill-badges">
+                        <span class="skill-badge"><i class="fab fa-git-alt"></i> Git</span>
+                        <span class="skill-badge"><i class="fab fa-github"></i> GitHub</span>
+                        <span class="skill-badge"><i class="fab fa-html5"></i> HTML</span>
+                        <span class="skill-badge"><i class="fab fa-css3-alt"></i> CSS</span>
+                        <span class="skill-badge"><i class="fab fa-js"></i> JavaScript</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="container">
+            <h2 class="section-title fade-up">Featured Projects</h2>
+            <p class="section-subtitle">A showcase of my recent data analysis and visualization work.</p>
+            
+            <div class="projects-container" id="projects-container">
+                <!-- Projects will be injected here via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / Education Section -->
+    <section id="experience" class="experience section bg-light">
+        <div class="container">
+            <h2 class="section-title fade-up">Experience & Education</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 48px; margin-top: 40px;">
+                
+                <!-- Experience Column -->
+                <div>
+                    <h3 style="font-size: 1.8rem; color: var(--secondary-color); margin-bottom: 32px; padding-left: 20px;" class="fade-up"><i class="fas fa-briefcase" style="color: var(--primary-color); margin-right: 12px;"></i>Experience</h3>
+                    <div class="timeline">
+                        <div class="timeline-item fade-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Content Associate</h3>
+                                <h4>Teaching Pariksha</h4>
+                                <span class="timeline-date">2025 - 2026</span>
+                                <p>Managed class scheduling, test creation, PPT development, and educational platform administration. Handled live streaming and resolved technical issues for smooth academic operations.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item fade-up delay-100">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Web Development Trainee</h3>
+                                <h4>ICEICO Technologies</h4>
+                                <span class="timeline-date">2024</span>
+                                <p>Created responsive web pages using HTML, CSS, and JavaScript. Collaborated with UI/UX designers to bridge the gap between design and technical implementation.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Education Column -->
+                <div>
+                    <h3 style="font-size: 1.8rem; color: var(--secondary-color); margin-bottom: 32px; padding-left: 20px;" class="fade-up"><i class="fas fa-graduation-cap" style="color: var(--primary-color); margin-right: 12px;"></i>Education</h3>
+                    <div class="timeline">
+                        <div class="timeline-item fade-up">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Master of Commerce (M.Com)</h3>
+                                <h4>Sindhu Mahavidyalaya</h4>
+                                <span class="timeline-date">2024 - 2026</span>
+                                <p>Pursuing higher education to deepen my understanding of commerce, finance, and advanced data applications in business.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item fade-up delay-100">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Bachelor of Commerce in Computer Application (BCCA)</h3>
+                                <h4>SBCT College Nagpur</h4>
+                                <span class="timeline-date">2021 - 2024</span>
+                                <p>Built a strong foundation in computer applications, programming, and database management alongside core commerce subjects.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item fade-up delay-200">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-content">
+                                <h3>Data Analyst Course</h3>
+                                <h4>Code with Harry</h4>
+                                <span class="timeline-date">Completed</span>
+                                <p>Gained hands-on expertise in Data Analysis, focusing on practical implementation of SQL, Python, Excel, and Power BI for real-world projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+        <div class="container resume-container scale-up">
+            <div class="resume-content">
+                <h2>Interested in my full profile?</h2>
+                <p>View my resume to see my detailed qualifications, certifications, and experience.</p>
+                <div style="display: flex; gap: 16px; justify-content: center; margin-top: 24px; flex-wrap: wrap;">
+                    <button id="open-resume-btn" class="btn btn-primary btn-lg"><i class="fas fa-eye"></i> Preview Resume</button>
+                    <a href="Tuba%20Zainab%20CV.pdf" download="Tuba_Zainab_CV.pdf" class="btn btn-secondary btn-lg"><i class="fas fa-download"></i> Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="container">
+            <h2 class="section-title fade-up">Get In Touch</h2>
+            <p class="section-subtitle fade-up delay-100">I am currently open to Data Analyst opportunities. Let's connect!</p>
+            
+            <div class="contact-info">
+                <a href="mailto:zainabtuba20@gmail.com" class="contact-card fade-up">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <p>zainabtuba20@gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/in/tuba-zainab/" target="_blank" class="contact-card fade-up delay-100">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <p>Connect on LinkedIn</p>
+                </a>
+                <a href="https://github.com/tubazainab" target="_blank" class="contact-card fade-up delay-200">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <p>View my repositories</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-logo">Tuba<span>Zainab</span></div>
+            <p>&copy; 2024 Tuba Zainab. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modal-body">
+                <!-- Modal content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Resume Modal -->
+    <div id="resume-modal" class="modal">
+        <div class="modal-content" style="max-width: 900px; height: 90vh; display: flex; flex-direction: column;">
+            <span class="close-modal" id="close-resume-modal" style="position: absolute; right: 20px; top: 15px;">&times;</span>
+            <div style="padding: 24px; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; padding-right: 70px;">
+                <h2 style="margin:0; font-size: 1.5rem; color: var(--secondary-color);">Resume Preview</h2>
+                <a href="Tuba%20Zainab%20CV.pdf" download="Tuba_Zainab_CV.pdf" class="btn btn-primary"><i class="fas fa-download"></i> Download PDF</a>
+            </div>
+            <div style="flex: 1; padding: 0; background: var(--bg-light);">
+                <iframe src="Tuba%20Zainab%20CV.pdf" width="100%" height="100%" style="border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="projects.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
