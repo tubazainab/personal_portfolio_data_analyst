@@ -49,5 +49,45 @@ const projectsData = [
     galleryImages: [
       "Images/1st/HR_Analytics_Dashboard.png.png"
     ]
+  },
+  {
+    id: "tournament-overview-dashboard",
+    title: "Tournament Overview Dashboard",
+    category: "Power BI Dashboard",
+    thumbnail: "Images/2nd/Tournament Overview Dashboard.png",
+    shortDescription: "A comprehensive Tournament Overview Dashboard analyzing match results, total goals by team, match statistics across cities, and performance across tournament stages.",
+    tools: ["Power BI", "Data Visualization", "Data Modeling"],
+    
+    overview: "This dashboard provides a detailed overview of a football tournament, capturing key statistics like total matches (1050), goals (3024), assists (33K), and average player ratings (3.63). It visualizes match results, goals across different days, team performance, and match distribution across various cities.",
+    businessProblem: "Tournament organizers and analysts need a centralized view to track tournament progress, analyze team performances, and monitor key metrics across different stages and locations.",
+    datasetDesc: "The dataset includes comprehensive match statistics, team details, venue information, and player performance metrics across different tournament stages.",
+    dataCleaning: "Data preparation involved standardizing team names, ensuring correct date formats, handling missing values in match statistics, and aggregating data for stage-wise and city-wise analysis.",
+    
+    daxMeasures: [
+      "1. Total Matches",
+      "2. Total Goals",
+      "3. Total Assists",
+      "4. Average Player Rating",
+      "5. Player of the Match Awards"
+    ],
+    
+    insights: [
+      "The tournament featured 1050 matches with a total of 3024 goals and 33K assists.",
+      "The Group Stage accounted for the majority of the goals scored (over 1500).",
+      "Top scoring teams include France, Chile, South Korea, Argentina, and Japan.",
+      "Matches were distributed across multiple host cities including Boston, Mexico City, Miami, and Seattle."
+    ],
+    recommendations: [
+      "Use performance metrics to identify and reward top players and teams.",
+      "Analyze venue-specific data to optimize logistics and resource allocation for future matches."
+    ],
+    links: {
+      github: "#",
+      liveDemo: "", 
+      downloadFile: "Images/2nd/Tournament Overview Dashboard.pbix" 
+    },
+    galleryImages: [
+      "Images/2nd/Tournament Overview Dashboard.png"
+    ]
   }
 ];
