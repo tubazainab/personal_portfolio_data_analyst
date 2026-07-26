@@ -104,27 +104,28 @@ a {
 }
 
 .btn-primary {
-    background-color: var(--primary-color);
+    background: linear-gradient(90deg, var(--primary-color), #00d2ff);
     color: white;
+    box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-dark);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(14, 165, 233, 0.5);
 }
 
 .btn-secondary {
-    background-color: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(10px);
     color: white;
 }
 
 .btn-secondary:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    background-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .btn-outline {
@@ -205,9 +206,17 @@ a {
 /* Hero Section */
 .hero {
     padding: 120px 0 40px;
-    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-main) 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, #0c2040 50%, var(--bg-main) 100%);
+    background-size: 200% 200%;
+    animation: gradientShift 10s ease infinite;
     display: flex;
     align-items: center;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 .hero-container {
@@ -970,6 +979,13 @@ a {
     border-radius: 8px;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border-color);
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(14, 165, 233, 0.15);
+    border-color: var(--primary-color);
 }
 
 .timeline-date {
@@ -1061,113 +1077,7 @@ footer {
     color: var(--primary-color);
 }
 
-/* Responsive Design */
-@media (max-width: 992px) {
-    .hero-container {
-        flex-direction: column-reverse;
-        text-align: center;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
-    }
 
-    .about-grid {
-        flex-direction: column;
-    }
-
-    .about-visual {
-        min-height: 300px;
-        width: 100%;
-        margin-top: 40px;
-    }
-    
-    .modal-body-content {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 768px) {
-    html, body {
-        overflow-x: hidden;
-    }
-
-    .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(11, 17, 32, 0.98);
-        flex-direction: column;
-        padding: 24px 0;
-        box-shadow: var(--shadow-md);
-        border-top: 1px solid var(--border-color);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-    
-    .btn-resume-nav {
-        display: none;
-    }
-    
-    .mobile-menu-btn {
-        display: block;
-    }
-    
-    .hero {
-        padding: 100px 0 60px;
-    }
-
-    .hero h1 {
-        font-size: 2.2rem;
-    }
-    
-    /* Scale down the abstract graphic on mobile so it doesn't overflow */
-    .data-graphic {
-        transform: scale(0.7);
-        transform-origin: center;
-        margin: 0 auto;
-    }
-
-    .status-badge {
-        font-size: 0.75rem;
-        padding: 4px 10px;
-    }
-
-    .about-highlights {
-        flex-direction: column;
-        gap: 24px;
-    }
-
-    /* Modal mobile fixes overriding inline styles */
-    .modal-content {
-        width: 95%;
-        margin: 15% auto;
-    }
-    
-    .modal-header-content h2 {
-        font-size: 1.8rem !important;
-    }
-    
-    .modal-hero {
-        padding: 0 16px !important;
-    }
-    
-    .modal-body-content {
-        padding: 0 16px 24px !important;
-    }
-
-    .close-modal {
-        top: 8px;
-        right: 12px;
-        width: 35px;
-        height: 35px;
-        font-size: 24px;
-    }
-}
 
 /* Scroll Reveal Animations */
 .fade-up {
@@ -1257,9 +1167,27 @@ footer {
 }
 
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    
     /* Section Spacing */
     .section {
         padding: 60px 0;
+    }
+
+    /* Timeline Mobile Fix */
+    .timeline-item {
+        padding: 10px 15px 30px 30px;
+    }
+    .timeline::after {
+        left: 10px;
+    }
+    .timeline-dot {
+        left: 2px;
+        width: 12px;
+        height: 12px;
+        top: 18px;
     }
 
     /* Typography */
@@ -1335,11 +1263,41 @@ footer {
         height: 80vh !important;
     }
     
+    .modal-header-content h2 {
+        font-size: 1.8rem !important;
+    }
+    
+    .modal-hero {
+        padding: 0 16px !important;
+    }
+    
+    .modal-body-content {
+        padding: 0 16px 24px !important;
+    }
+
+    .close-modal {
+        top: 8px;
+        right: 12px;
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+    }
+    
     /* Stats Banner */
     .stats-banner .container {
         flex-direction: column;
         align-items: center;
         gap: 40px !important;
+    }
+
+    .status-badge {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+
+    .about-highlights {
+        flex-direction: column;
+        gap: 24px;
     }
 }
 
