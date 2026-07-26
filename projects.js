@@ -89,5 +89,48 @@ const projectsData = [
     galleryImages: [
       "Images/2nd/Tournament Overview Dashboard.png"
     ]
+  },
+  {
+    id: "oil-sales-dashboard",
+    title: "Oil Sales Dashboard",
+    category: "Power BI Dashboard",
+    thumbnail: "Images/3rd/Oil Sales Dashboard.png",
+    shortDescription: "An interactive Oil Sales Dashboard analyzing sales by year, brand, city, class, and manufacturer.",
+    tools: ["Power BI", "Data Visualization", "Data Modeling"],
+    
+    overview: "This dashboard provides a comprehensive view of oil sales performance, capturing key metrics like Total Values (1.23M), Total Product (2K), and Total Brand (10). It visualizes sales distribution across different years (2022-2024), brands, cities, and product classes.",
+    businessProblem: "Organizations need to analyze oil sales data to understand product performance, brand popularity, and regional sales distribution to optimize inventory and marketing strategies.",
+    datasetDesc: "The dataset includes oil sales records containing information on sales values, products, brands, stores, cities, classes, and manufacturers over several years.",
+    dataCleaning: "Data was cleaned and prepared by ensuring correct data types, handling missing values, and standardizing categories for accurate visualization.",
+    
+    daxMeasures: [
+      "1. Total Values",
+      "2. Total Product",
+      "3. Total Brand",
+      "4. Average of Sales",
+      "5. Total Sales",
+      "6. Total Stores"
+    ],
+    
+    insights: [
+      "Total sales value reached 1.23M across 2K products and 10 brands.",
+      "Gulf Gold is the top-selling brand, followed by Sabaya and Zahra.",
+      "Al Baha and Makkah are the top cities in terms of sales.",
+      "Vegetable and Corn oil are the most sold classes of oil.",
+      "Blue Oasis Co and Sahara Edibles are the leading manufacturers."
+    ],
+    recommendations: [
+      "Focus marketing efforts on top-selling brands like Gulf Gold and Sabaya.",
+      "Increase inventory and promotional activities in high-sales cities like Al Baha and Makkah.",
+      "Analyze the performance of lower-selling brands to identify areas for improvement."
+    ],
+    links: {
+      github: "#",
+      liveDemo: "", 
+      downloadFile: "Images/3rd/Oil Sales Dashboard.pbix" 
+    },
+    galleryImages: [
+      "Images/3rd/Oil Sales Dashboard.png"
+    ]
   }
 ];
